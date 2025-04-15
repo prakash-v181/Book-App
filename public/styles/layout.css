@@ -1,0 +1,146 @@
+@media only screen and (max-width: 980px){
+
+  body{
+    background-color: #fff;
+  }
+  header{
+    position: relative;
+  }
+  header, footer, h3{
+    margin: 0 auto;
+    width: 480px;
+  }
+  nav {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: #000;
+    opacity: 0;
+    text-align: center;
+    z-index: 1;
+    /* transition: 0.5s; */
+  }
+  nav a{
+    width: 250px;
+    display: block;
+    margin: 10px auto;
+    color: #fff;
+  }
+  nav a:hover{
+    color: #00f;
+  }
+  main {
+    background-color: #000;
+  }
+  .container {
+    width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .barIcon{
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  /*-==============================*/
+  .hamburger{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .hamburger .bar{
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    transition: 0.5s;
+  }
+  .bar::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10px;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    transition: 0.5s;
+  }
+  .bar::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    width: 30px;
+    height: 4px;
+    background: #fff;
+    transition: 0.5s;
+  }
+  .hamburger:hover .bar{
+    /* opacity: 0; */
+  }
+  .hamburger:hover .bar::after{
+    top: 0;
+    transform: rotate(-45deg);
+  }
+  .hamburger:hover .bar::before{
+    top: 0;
+    transform: rotate(45deg);
+  }
+  /*-==============================*/
+  .contentDiv, .imageDiv, .newResultFormDiv{
+    text-align: center;
+    width: 100%;
+  }
+  .imageDiv{
+    order: 1;
+  }
+  .contentDiv{
+    order: 2;
+    padding: 0;
+  }
+  .bookDiv {
+    flex-wrap: wrap;
+  }
+  button {
+    width: 250px;
+  }
+  .newResultFormSection{
+   flex-wrap: wrap;
+  }
+  .newResultFormDiv{
+    width: 100%;
+    order: 2;
+  }
+  .newResultFormSection .imageDiv{
+    order: 1;
+  }
+  .newResultFormSection .imageDiv h4{
+    color: #000;
+  }
+  .newResultFormSection h4{
+    color: #fff;
+  }
+
+  .searchForm fieldset{
+    width: 410px;
+  }
+  .searchForm input {
+    width: 410px;
+  }
+  input[type='radio']{
+    width: 15%;
+  }
+  .searchAPI{
+    width: 380px;
+    font-size: 17px;
+  }
+}

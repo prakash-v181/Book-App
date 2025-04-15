@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../../layout/head') %>
+  <body>
+    <%- include('../../layout/header') %>
+    <h3>Search by Title or Author</h3>
+    <div class="container">
+      <main>
+        <section>
+          <div class="searchFormDiv">
+            <form action="/search/result" method="post" class="searchForm">
+              <input type="text" name="search" placeholder="Enter a title or author name" required>
+              <fieldset>
+                <label>Title</label>
+                <input type="radio" name="search" value="title" required>
+              </fieldset>
+              <fieldset>
+                <label>Author</label>
+                <input type="radio" name="search" value="author" required>              
+              </fieldset>
+              <button class="searchAPI" type="submit">Search the Google API Books</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <%- include('../../layout/footer') %>
+  </body>
+</html>

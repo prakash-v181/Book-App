@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../../layout/head') %>
+  <body>
+    <%- include('../../layout/header') %>
+    <h3>Book Details</h3>
+    <div class="container">
+      <main>
+        <section>
+          <div class="bookDiv">            
+            <div class="contentDiv">
+              <h4>Title: <%= book.title %></h4>
+              <h4>Author: <%= book.author %></h4>
+              <h4>Description:</h4>
+              <p class="description">
+                <%= book.description %>
+              </p>
+              <h4 class="isbn">ISBN: <%= book.isbn %></h4>
+            </div>
+            <div class="imageDiv">
+              <h4>Book Cover</h4>
+              <img src="<%= book.image_url %>" alt="No Image Available">
+            </div>
+          </div>
+          <div class="detailSection">
+            <form class="detailForm" action="/detail/<%= book.id %>" method="post" >
+              <input type="hidden" name="_method" value="delete">
+              <!-- <input type="hidden" name="id" value='<%= book.id %>'>
+              <input type="hidden" name="title" value='<%= book.title %>'>
+              <input type="hidden" name="author" value='<%= book.author %>'>
+              <input type="hidden" name="description" value='<%= book.description %>'>
+              <input type="hidden" name="image_url" value='<%= book.image_url %>'>
+              <input type="hidden" name="isbn" value='<%= book.isbn %>'> -->
+              <button class="detailsButton">Remove</button>
+            </form>
+            <form class="detailForm" action="/update/<%= book.id %>" method="post" >
+              <input type="hidden" name="id" value='<%= book.id %>'>
+              <input type="hidden" name="title" value='<%= book.title %>'>
+              <input type="hidden" name="author" value='<%= book.author %>'>
+              <input type="hidden" name="description" value='<%= book.description %>'>
+              <input type="hidden" name="image_url" value='<%= book.image_url %>'>
+              <input type="hidden" name="isbn" value='<%= book.isbn %>'>
+              <button class="detailsButton">Update</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+    <%- include('../../layout/footer') %>
+  </body>
+</html>

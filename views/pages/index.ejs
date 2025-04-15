@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <%- include('../layout/head') %>
+  <body>
+    <%- include('../layout/header') %>
+    <h3>There're <span><%= rowCount %></span> Saved Books in the Collection</h3>
+    <div class="container">
+      <main>
+        <% booksArray.forEach(book => { %>
+          <section>
+            <div class="bookDiv">            
+              <div class="contentDiv">
+                <h4>Title: <%= book.title %></h4>
+                <h4>Author: <%= book.author %></h4>
+                <h4>Description:</h4>
+                <p class="description">
+                  <%= book.description %>
+                </p>
+                <h4 class="isbn">ISBN: <%= book.isbn %></h4>
+              </div>
+              <div class="imageDiv">
+                <h4>Book Cover</h4>
+                <img src="<%= book.image_url %>" alt="No Image Available">
+              </div>
+            </div>
+            <form action="/detail/<%= book.id %>" method="post" class="indexForm">
+              <button class="indexButton">View Details</button>
+            </form>
+          </section>
+        <% }); %>
+      </main>
+    </div>
+    <%- include('../layout/footer') %>
+  </body>
+</html>
